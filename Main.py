@@ -1,5 +1,6 @@
 # Python libraries that we need to import for our bot
 import random
+import os
 from flask import Flask, request
 from pymessenger.bot import Bot
 
@@ -64,4 +65,5 @@ def send_message(recipient_id, response):
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
