@@ -65,7 +65,7 @@ def send_message(recipient_id, response):
 
 @app.route("/policy", methods=['GET'])
 def ppolicy():
-    return render_template('PPolicy.html')
+    return flask.render_template('PPolicy.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
