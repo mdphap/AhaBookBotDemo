@@ -63,6 +63,9 @@ def send_message(recipient_id, response):
     bot.send_text_message(recipient_id, response)
     return "success"
 
+@app.route("/policy", methods=['GET'])
+def ppolicy():
+    return render_template('PPolicy.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
