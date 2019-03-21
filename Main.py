@@ -1,7 +1,7 @@
 # Python libraries that we need to import for our bot
 import random
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
@@ -65,7 +65,7 @@ def send_message(recipient_id, response):
 
 @app.route("/policy", methods=['GET'])
 def ppolicy():
-    return flask.render_template('PPolicy.html')
+    return render_template('PPolicy.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
